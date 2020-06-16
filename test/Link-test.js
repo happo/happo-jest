@@ -1,13 +1,12 @@
 import React from 'react';
 
-import renderer from 'react-test-renderer';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import Link from '../src/Link';
 
 test('Link changes the class when hovered', () => {
-  const component = renderer.create(
+  const { container } = render(
     <Link page="http://www.facebook.com">Facebook</Link>,
   );
-  console.log('TREE', component.toTree());
-  console.log('document html', document.body.innerHTML);
+  console.log(container.innerHTML);
 });
