@@ -2,12 +2,12 @@ import crypto from 'crypto';
 
 const COMMENT_PATTERN = /^\/\*.+\*\/$/;
 
-function extractCSSBlocks({ doc }) {
+function extractCSSBlocks() {
   const blocks = [];
-  const styleElements = doc.querySelectorAll(
+  const styleElements = document.querySelectorAll(
     'style,link[rel="stylesheet"][href]',
   );
-  const baseUrl = doc.location.origin;
+  const baseUrl = document.location.origin;
   styleElements.forEach(element => {
     if (element.tagName === 'LINK') {
       // <link href>
@@ -37,15 +37,10 @@ function findRootElement() {
 
 function screenshot(root) {
   const container = root || findRootElement();
-  //console.log(container.innerHTML);
-  //console.log(extractCSSBlocks({ doc: document }));
+  global.happoRegister({
+    html: container.innerHTML,
+    cssBlocks: extractCSSBlocks(),
+  });
 }
-
-beforeAll(() => {
-  console.log('Hello before');
-});
-afterAll(() => {
-  console.log('Hello after');
-});
 
 export { screenshot };
