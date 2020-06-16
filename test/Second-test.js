@@ -6,7 +6,7 @@ import Link from '../src/Link';
 
 import { screenshot } from '../';
 
-test('Link', () => {
+test('Second link', () => {
   const { container, rerender } = render(<Link href="#">Facebook</Link>);
   screenshot(container);
   rerender(
@@ -14,5 +14,5 @@ test('Link', () => {
       Facebook
     </Link>,
   );
-  screenshot();
+  screenshot(container);
 });

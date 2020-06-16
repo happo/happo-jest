@@ -23,10 +23,12 @@
     "@babel/preset-react": "^7.10.1",
     "@testing-library/react": "^10.2.1",
     "babel-jest": "^26.0.1",
+    "babel-plugin-styled-components": "^1.10.7",
     "jest": "^26.0.1"
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   }
 }
